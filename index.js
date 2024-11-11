@@ -6,6 +6,7 @@ import UserRoutes from "./Kanbas/Users/routes.js";
 import CourseRoutes from "./Kanbas/Courses/routes.js";
 import session from "express-session";
 import "dotenv/config";
+import ModuleRoutes from "./Kanbas/Modules/routes.js";
 
 const app = express();
 
@@ -42,6 +43,7 @@ app.use(
 
 UserRoutes(app);
 CourseRoutes(app);
+ModuleRoutes(app);
 Lab5(app);
 Hello(app);
 
