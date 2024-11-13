@@ -17,8 +17,14 @@ export default function AssignmentRoutes(app) {
 
     app.post("/api/assignments", (req, res) => {
 
-        const { cid } = req.params;
         assignmentDao.createAssignment(req.body);
+        res.sendStatus(204);
+    });
+
+    app.put("/api/assignments", (req, res) => {
+
+        const updatedAssignment = req.body;
+        assignmentDao.updateAssignment(updatedAssignment);
         res.sendStatus(204);
     });
 }
