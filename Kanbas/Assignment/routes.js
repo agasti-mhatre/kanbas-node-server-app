@@ -14,4 +14,11 @@ export default function AssignmentRoutes(app) {
         const { cid } = req.params;
         res.json(assignmentDao.fetchAssignmentsForCourse(cid));
     });
+
+    app.post("/api/assignments", (req, res) => {
+
+        const { cid } = req.params;
+        assignmentDao.createAssignment(req.body);
+        res.sendStatus(204);
+    });
 }
