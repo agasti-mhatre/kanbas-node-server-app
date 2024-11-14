@@ -8,9 +8,10 @@ export default function EnrollmentRoutes(app) {
         res.sendStatus(204);
     });
 
-    app.delete("/api/enrollments", (req, res) => {
+    app.delete("/api/enrollments/:id/:userID", (req, res) => {
 
-        enrollmentDao.deleteEnrollment(req.body);
+        const { id, userID } = req.params;
+        enrollmentDao.deleteEnrollment(id, userID);
         res.sendStatus(204);
     });
 

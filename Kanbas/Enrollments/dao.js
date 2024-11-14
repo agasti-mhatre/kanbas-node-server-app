@@ -11,13 +11,12 @@ export function addEnrollment(newEnrollment) {
     Database.enrollments = [...Database.enrollments, newEnrollment];
 }
 
-export function deleteEnrollment(removeEnrollment) {
+export function deleteEnrollment(deleteId, userID) {
 
-    Database.enrollments = Database.enrollments.filter((enrollment) => enrollment._id !== removeEnrollment._id);
+    Database.enrollments = Database.enrollments.filter((enrollment) => ((enrollment.course !== deleteId) || (enrollment.user !== userID)));
 }
 
 export function fetchEnrollments(userID) {
     
-    const enrolled = Database.enrollments.filter((enrollment) => enrollment.user === userID).map((e) => e.course);
-    return Database.courses.filter((course) => enrolled.includes(course.id));
+    return Database.enrollments.filter((enr) => enr.user === userID);
 }
