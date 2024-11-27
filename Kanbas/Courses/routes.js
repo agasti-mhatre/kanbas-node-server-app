@@ -11,10 +11,13 @@ export default function CourseRoutes(app) {
     app.post("/api/courses", async (req, res) => {
     
         try {
+
             const course = await dao.createCourse(req.body);
             res.json(course);
         } catch(error) {
+            
             console.log(error);
+            res.json({});
         }
     });     
 
