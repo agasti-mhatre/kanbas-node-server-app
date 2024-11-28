@@ -1,9 +1,10 @@
 import Database from "../Database/index.js";
+import model from "./model.js";
 
-export function fetchAssignmentsForCourse(cid) {
+export async function fetchAssignmentsForCourse(cid) {
 
-    const { assignments } = Database;
-    return assignments.filter((assignment) => assignment.course === cid);
+    const assignments = await model.find({course: cid});
+    return assignments;
 }
 
 export function createAssignment(newAssignment) {
@@ -19,7 +20,7 @@ export function updateAssignment(updatedAssignment) {
     return assignment;
 }
 
-export function deleteAssignment(_id) {
+export async function deleteAssignment(id) {
     
-    Database.assignments = Database.assignments.filter((x) => x._id !== _id);
+    await model.deleteOne({_id: id});
 }
