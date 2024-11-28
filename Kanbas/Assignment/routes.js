@@ -16,9 +16,9 @@ export default function AssignmentRoutes(app) {
         res.json(assignments);
     });
 
-    app.post("/api/assignments", (req, res) => {
+    app.post("/api/assignments", async (req, res) => {
 
-        assignmentDao.createAssignment(req.body);
+        await assignmentDao.createAssignment(req.body);
         res.sendStatus(204);
     });
 

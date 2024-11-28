@@ -7,9 +7,11 @@ export async function fetchAssignmentsForCourse(cid) {
     return assignments;
 }
 
-export function createAssignment(newAssignment) {
+export async function createAssignment(newAssignment) {
 
-    Database.assignments = [...Database.assignments, newAssignment];
+    const id = newAssignment._id;
+    delete newAssignment._id;
+    await model.create({_id: id, ...newAssignment});
 }
 
 export async function updateAssignment(updatedAssignment) {
