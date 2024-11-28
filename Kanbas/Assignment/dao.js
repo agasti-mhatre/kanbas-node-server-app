@@ -12,12 +12,11 @@ export function createAssignment(newAssignment) {
     Database.assignments = [...Database.assignments, newAssignment];
 }
 
-export function updateAssignment(updatedAssignment) {
+export async function updateAssignment(updatedAssignment) {
 
-    const { assignments } = Database;
-    const assignment = assignments.find((assignment) => assignment._id === updatedAssignment._id);
-    Object.assign(assignment, updatedAssignment);
-    return assignment;
+    const id = updatedAssignment._id;
+    delete updatedAssignment._id;
+    await model.updateOne({_id: id}, {$set: updatedAssignment});
 }
 
 export async function deleteAssignment(id) {

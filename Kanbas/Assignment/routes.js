@@ -22,10 +22,10 @@ export default function AssignmentRoutes(app) {
         res.sendStatus(204);
     });
 
-    app.put("/api/assignments", (req, res) => {
+    app.put("/api/assignments", async (req, res) => {
 
         const updatedAssignment = req.body;
-        assignmentDao.updateAssignment(updatedAssignment);
+        await assignmentDao.updateAssignment(updatedAssignment);
         res.sendStatus(204);
     });
 }
