@@ -2,6 +2,7 @@ import model from "./model.js"
 
 export const createUser = (user) => {
 
+  user._id = Date.now().toString();
   return model.create(user);
 };
 export const findAllUsers = () => model.find();
