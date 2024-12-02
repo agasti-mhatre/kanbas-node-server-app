@@ -22,7 +22,12 @@ const quizSchema = new mongoose.Schema({
     due: String,
     available: String,
     until: String,
-    numberOfQuestions: Number
+    numberOfQuestions: Number,
+    instructions: String,
+    viewResponses: String,
+    lessons: Array,
+    editing: Boolean,
+    published: Boolean
 },
 {collection: "quizzes"}
 );

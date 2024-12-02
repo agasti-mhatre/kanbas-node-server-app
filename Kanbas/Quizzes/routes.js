@@ -9,4 +9,15 @@ export default function QuizzesRoutes(app) {
         res.json(quizzes);
     });
 
+    app.post("/api/quizzes", async (req, res) => {
+
+        const status = await quizDao.addQuiz(req.body)
+        res.send(status);
+    });
+
+    app.put("/api/quizzes", async (req, res) => {
+
+        const status = await quizDao.updateQuiz(req.body);
+        res.send(status);
+    });
 }
