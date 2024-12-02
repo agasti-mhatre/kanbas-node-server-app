@@ -20,4 +20,11 @@ export default function QuizzesRoutes(app) {
         const status = await quizDao.updateQuiz(req.body);
         res.send(status);
     });
+
+    app.delete("/api/quizzes/:qid", async (req, res) => {
+
+        const { qid } = req.params;
+        const status = await quizDao.deleteQuiz(qid);
+        res.send(status);
+    });
 }

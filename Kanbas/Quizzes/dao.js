@@ -17,3 +17,8 @@ export async function updateQuiz(quiz) {
     delete quiz._id;
     await model.updateOne({_id: qid}, {$set: quiz});
 }
+
+export async function deleteQuiz(qid) {
+
+    await model.deleteOne({_id: qid});
+}
