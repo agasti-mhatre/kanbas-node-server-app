@@ -1,30 +1,56 @@
-import * as quizDao from "./dao.js"
+import { fetchQuizzes, fetchQuestions } from './dao.js';
 
 export default function QuizzesRoutes(app) {
+    // Route to fetch quizzes for a specific course
+    app.get('/quizzes/:courseId', async (req, res) => {
+        try {
+            const { courseId } = req.params;
+            const quizzes = await fetchQuizzes(courseId);
 
-    app.get("/api/quizzes/:cid", async (req, res) => {
+            if (!quizzes || quizzes.length === 0) {
+                return res.status(404).json({
+                    message: 'No quizzes found for this course',
+                    courseId
+                });
+            }
 
-        const { cid } = req.params;
-        const quizzes = await quizDao.fetchQuizzes(cid);
-        res.json(quizzes);
+            res.status(200).json({
+                message: 'Quizzes fetched successfully',
+                quizzes: quizzes
+            });
+        } catch (error) {
+            console.error('Error fetching quizzes:', error);
+            res.status(500).json({
+                message: 'Internal server error',
+                error: error.message
+            });
+        }
     });
 
-    app.post("/api/quizzes", async (req, res) => {
+    // Route to fetch questions for a specific quiz
+    app.get('/questions/:quizId', async (req, res) => {
+        try {
+            const { quizId } = req.params;
+            const questions = await fetchQuestions(quizId);
+            console.log('look at the questions: ', questions);
 
-        const status = await quizDao.addQuiz(req.body)
-        res.send(status);
-    });
+            if (!questions) {
+                return res.status(404).json({
+                    message: 'No questions found',
+                    questionId: questionId
+                });
+            }
 
-    app.put("/api/quizzes", async (req, res) => {
-
-        const status = await quizDao.updateQuiz(req.body);
-        res.send(status);
-    });
-
-    app.delete("/api/quizzes/:qid", async (req, res) => {
-
-        const { qid } = req.params;
-        const status = await quizDao.deleteQuiz(qid);
-        res.send(status);
+            res.status(200).json({
+                message: 'Questions fetched successfully',
+                questions: questions
+            });
+        } catch (error) {
+            console.error('Error fetching questions:', error);
+            res.status(500).json({
+                message: 'Internal server error',
+                error: error.message
+            });
+        }
     });
 }
