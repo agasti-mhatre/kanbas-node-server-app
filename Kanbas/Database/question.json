@@ -1,4 +1,4 @@
-const questions = [
+[
     {
         "questionId": "QS1",
         "quizId": "A101",
@@ -51,8 +51,6 @@ const questions = [
         "correctAnswer": "Hyper Text Markup Language",
         "points": 2
     },
-
-    // Questions for A102
     {
         "questionId": "QS6",
         "quizId": "A102",
@@ -106,8 +104,6 @@ const questions = [
         "correctAnswer": "Positions an element to the left or right of its container",
         "points": 3
     },
-
-    // Questions for A103
     {
         "questionId": "QS11",
         "quizId": "A103",
@@ -153,8 +149,6 @@ const questions = [
         "correctAnswer": "Character",
         "points": 2
     },
-
-    // Questions for A201
     {
         "questionId": "QS16",
         "quizId": "A201",
@@ -185,9 +179,6 @@ const questions = [
         "correctAnswer": "separation point",
         "points": 2
     },
-    // Add more questions for A201 as needed
-
-    // Questions for A202
     {
         "questionId": "QS19",
         "quizId": "A202",
@@ -210,9 +201,6 @@ const questions = [
         "correctAnswer": "True",
         "points": 2
     },
-    // Add more questions for A202 as needed
-
-    // Questions for A203
     {
         "questionId": "QS21",
         "quizId": "A203",
@@ -235,9 +223,6 @@ const questions = [
         "correctAnswer": "higher, lower",
         "points": 2
     },
-    // Add more questions for A203 as needed
-
-    // Questions for A301
     {
         "questionId": "QS23",
         "quizId": "A301",
@@ -251,9 +236,6 @@ const questions = [
         "correctAnswer": "To ensure structures can withstand loads and forces safely",
         "points": 3
     },
-    // Add more questions for A301 as needed
-
-    // Questions for A302
     {
         "questionId": "QS24",
         "quizId": "A302",
@@ -267,9 +249,6 @@ const questions = [
         "correctAnswer": "Planets move in elliptical orbits with the Sun at one focus",
         "points": 3
     },
-    // Add more questions for A302 as needed
-
-    // Questions for A303
     {
         "questionId": "QS25",
         "quizId": "A303",
@@ -278,8 +257,5 @@ const questions = [
         "options": ["True", "False"],
         "correctAnswer": "True",
         "points": 2
-    },
-    // Add more questions for A303 as needed
-];
-
-export default questions;
+    }
+]
