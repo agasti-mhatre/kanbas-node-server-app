@@ -13,8 +13,8 @@ import mongoose from "mongoose";
 import QuizzesRoutes from './Kanbas/Quizzes/routes.js';
 
 
-// const CONNECTION_STRING = process.env.MONGO_CONNECTION_STRING || "mongodb://127.0.0.1:27017/kanbas";
-const CONNECTION_STRING = "mongodb://127.0.0.1:27017/kanbas";
+const CONNECTION_STRING = process.env.MONGO_CONNECTION_STRING || "mongodb://127.0.0.1:27017/kanbas";
+//const CONNECTION_STRING = "mongodb://127.0.0.1:27017/kanbas";
 mongoose.connect(CONNECTION_STRING);
 
 console.log(`App is listening PORT ${process.env.PORT || 4000}`)

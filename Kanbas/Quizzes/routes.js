@@ -1,37 +1,38 @@
-import { fetchQuizzes, fetchQuestions } from './dao.js';
+
+import * as quizDao from "./dao.js"
 
 export default function QuizzesRoutes(app) {
-    // Route to fetch quizzes for a specific course
-    app.get('/quizzes/:courseId', async (req, res) => {
-        try {
-            const { courseId } = req.params;
-            const quizzes = await fetchQuizzes(courseId);
 
-            if (!quizzes || quizzes.length === 0) {
-                return res.status(404).json({
-                    message: 'No quizzes found for this course',
-                    courseId
-                });
-            }
+    app.get("/api/quizzes/:cid", async (req, res) => {
 
-            res.status(200).json({
-                message: 'Quizzes fetched successfully',
-                quizzes: quizzes
-            });
-        } catch (error) {
-            console.error('Error fetching quizzes:', error);
-            res.status(500).json({
-                message: 'Internal server error',
-                error: error.message
-            });
-        }
+        const { cid } = req.params;
+        const quizzes = await quizDao.fetchQuizzes(cid);
+        res.json(quizzes);
     });
 
-    // Route to fetch questions for a specific quiz
+    app.post("/api/quizzes", async (req, res) => {
+
+        const status = await quizDao.addQuiz(req.body)
+        res.send(status);
+    });
+
+    app.put("/api/quizzes", async (req, res) => {
+
+        const status = await quizDao.updateQuiz(req.body);
+        res.send(status);
+    });
+
+    app.delete("/api/quizzes/:qid", async (req, res) => {
+
+        const { qid } = req.params;
+        const status = await quizDao.deleteQuiz(qid);
+        res.send(status);
+    });
+
     app.get('/questions/:quizId', async (req, res) => {
         try {
             const { quizId } = req.params;
-            const questions = await fetchQuestions(quizId);
+            const questions = await quizDao.fetchQuestions(quizId);
             console.log('look at the questions: ', questions);
 
             if (!questions) {
