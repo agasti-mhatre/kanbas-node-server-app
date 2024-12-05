@@ -33,7 +33,6 @@ export const quizSchema = new mongoose.Schema({
 
 export const questionSchema = new mongoose.Schema({
     _id: String,
-    questionId: String,
     quizId: String,
     text: String,
     type: String,

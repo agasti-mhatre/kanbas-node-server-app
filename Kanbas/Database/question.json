@@ -1,6 +1,6 @@
 [
     {
-        "questionId": "QS1",
+        "_id": "QS1",
         "quizId": "A101",
         "text": "An HTML label element can be associated with an HTML input element by setting their id attributes to the same value. The resulting effect is that when you click on the label text, the input element receives focus as if you had clicked on the input element itself.",
         "type": "True or False",
@@ -9,7 +9,7 @@
         "points": 1
     },
     {
-        "questionId": "QS2",
+        "_id": "QS2",
         "quizId": "A101",
         "text": "What is the purpose of the 'alt' attribute in an image tag?",
         "type": "Multiple Choice",
@@ -22,7 +22,7 @@
         "points": 2
     },
     {
-        "questionId": "QS3",
+        "_id": "QS3",
         "quizId": "A101",
         "text": "Fill in the blank: HTML is used to create _______.",
         "type": "Fill in the Blank",
@@ -30,7 +30,7 @@
         "points": 2
     },
     {
-        "questionId": "QS4",
+        "_id": "QS4",
         "quizId": "A101",
         "text": "Which HTML tag is used to define an unordered list?",
         "type": "Multiple Choice",
@@ -39,7 +39,7 @@
         "points": 2
     },
     {
-        "questionId": "QS5",
+        "_id": "QS5",
         "quizId": "A101",
         "text": "What does HTML stand for?",
         "type": "Multiple Choice",
@@ -52,7 +52,7 @@
         "points": 2
     },
     {
-        "questionId": "QS6",
+        "_id": "QS6",
         "quizId": "A102",
         "text": "Which CSS property is used to change the background color?",
         "type": "Multiple Choice",
@@ -61,7 +61,7 @@
         "points": 3
     },
     {
-        "questionId": "QS7",
+        "_id": "QS7",
         "quizId": "A102",
         "text": "How do you add a comment in CSS?",
         "type": "Multiple Choice",
@@ -74,7 +74,7 @@
         "points": 2
     },
     {
-        "questionId": "QS8",
+        "_id": "QS8",
         "quizId": "A102",
         "text": "Which CSS property controls the text size?",
         "type": "Multiple Choice",
@@ -83,7 +83,7 @@
         "points": 4
     },
     {
-        "questionId": "QS9",
+        "_id": "QS9",
         "quizId": "A102",
         "text": "Which CSS selector is used to select an element with id 'header'?",
         "type": "Multiple Choice",
@@ -92,7 +92,7 @@
         "points": 2
     },
     {
-        "questionId": "QS10",
+        "_id": "QS10",
         "quizId": "A102",
         "text": "In CSS, what does the 'float' property do?",
         "type": "Multiple Choice",
@@ -105,7 +105,7 @@
         "points": 3
     },
     {
-        "questionId": "QS11",
+        "_id": "QS11",
         "quizId": "A103",
         "text": "What keyword is used to declare a variable in JavaScript?",
         "type": "Multiple Choice",
@@ -114,7 +114,7 @@
         "points": 3
     },
     {
-        "questionId": "QS12",
+        "_id": "QS12",
         "quizId": "A103",
         "text": "What is the output of: console.log(typeof null)?",
         "type": "Multiple Choice",
@@ -123,7 +123,7 @@
         "points": 2
     },
     {
-        "questionId": "QS13",
+        "_id": "QS13",
         "quizId": "A103",
         "text": "Which method is used to add an element to the end of an array in JavaScript?",
         "type": "Multiple Choice",
@@ -132,7 +132,7 @@
         "points": 2
     },
     {
-        "questionId": "QS14",
+        "_id": "QS14",
         "quizId": "A103",
         "text": "Which symbol is used for comments in JavaScript?",
         "type": "Multiple Choice",
@@ -141,7 +141,7 @@
         "points": 2
     },
     {
-        "questionId": "QS15",
+        "_id": "QS15",
         "quizId": "A103",
         "text": "Which of the following is not a JavaScript data type?",
         "type": "Multiple Choice",
@@ -150,7 +150,7 @@
         "points": 2
     },
     {
-        "questionId": "QS16",
+        "_id": "QS16",
         "quizId": "A201",
         "text": "What is the definition of aerodynamic drag?",
         "type": "Multiple Choice",
@@ -163,7 +163,7 @@
         "points": 3
     },
     {
-        "questionId": "QS17",
+        "_id": "QS17",
         "quizId": "A201",
         "text": "True or False: Increasing the speed of an aircraft will always decrease the aerodynamic drag.",
         "type": "True or False",
@@ -172,7 +172,7 @@
         "points": 2
     },
     {
-        "questionId": "QS18",
+        "_id": "QS18",
         "quizId": "A201",
         "text": "Fill in the blank: The _______ is the point where the airflow separates from the surface of an object.",
         "type": "Fill in the Blank",
@@ -180,7 +180,7 @@
         "points": 2
     },
     {
-        "questionId": "QS19",
+        "_id": "QS19",
         "quizId": "A202",
         "text": "What does CFD stand for in flow analysis?",
         "type": "Multiple Choice",
@@ -193,7 +193,7 @@
         "points": 3
     },
     {
-        "questionId": "QS20",
+        "_id": "QS20",
         "quizId": "A202",
         "text": "True or False: Laminar flow is characterized by smooth and constant fluid motion.",
         "type": "True or False",
@@ -202,7 +202,7 @@
         "points": 2
     },
     {
-        "questionId": "QS21",
+        "_id": "QS21",
         "quizId": "A203",
         "text": "Which law is fundamental in heat transfer analysis?",
         "type": "Multiple Choice",
@@ -216,7 +216,7 @@
         "points": 3
     },
     {
-        "questionId": "QS22",
+        "_id": "QS22",
         "quizId": "A203",
         "text": "Fill in the blank: Heat always flows from _______ temperature to _______ temperature.",
         "type": "Fill in the Blank",
@@ -224,7 +224,7 @@
         "points": 2
     },
     {
-        "questionId": "QS23",
+        "_id": "QS23",
         "quizId": "A301",
         "text": "What is the main objective of structural design in engineering?",
         "type": "Multiple Choice",
@@ -237,7 +237,7 @@
         "points": 3
     },
     {
-        "questionId": "QS24",
+        "_id": "QS24",
         "quizId": "A302",
         "text": "Which of the following is Kepler's First Law?",
         "type": "Multiple Choice",
@@ -250,7 +250,7 @@
         "points": 3
     },
     {
-        "questionId": "QS25",
+        "_id": "QS25",
         "quizId": "A303",
         "text": "Systems engineering is an interdisciplinary field focusing on how to design and manage complex systems over their life cycles.",
         "type": "True or False",
