@@ -32,13 +32,20 @@ export const quizSchema = new mongoose.Schema({
 );
 
 export const questionSchema = new mongoose.Schema({
-    _id: String,
+    questionId: {
+        type: String, required: true, unique: true, default: function () {
+            return 'QS' + Math.floor(Math.random() * 1000);
+        }
+    },
     quizId: String,
+    title: String, 
     text: String,
-    type: String,
+    type:  {
+        type: String,
+        enum: ['Multiple Choice', 'True False', 'Fill in the blanks'],
+    },
     options: [String],
     correctAnswer: String,
     points: Number,
-    __v: Number
 },
     { collection: "questions" });
