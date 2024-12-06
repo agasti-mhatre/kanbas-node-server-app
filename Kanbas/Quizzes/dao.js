@@ -12,17 +12,17 @@ export async function fetchQuestions(quizId) {
 
 export async function addQuiz(quiz) {
 
-    await model.create(quiz);
+    await QuizModel.create(quiz);
 }
 
 export async function updateQuiz(quiz) {
 
     const qid = quiz._id;
     delete quiz._id;
-    await model.updateOne({_id: qid}, {$set: quiz});
+    await QuizModel.updateOne({_id: qid}, {$set: quiz});
 }
 
 export async function deleteQuiz(qid) {
 
-    await model.deleteOne({_id: qid});
+    await QuizModel.deleteOne({_id: qid});
 }
