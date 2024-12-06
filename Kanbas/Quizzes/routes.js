@@ -101,5 +101,43 @@ export default function QuizzesRoutes(app) {
             res.status(500).json({ message: "Failed to update question." });
         }
     });
+    
 
+
+app.post("/api/quizResults", async (req, res) => {
+    const { quizId, userId, answers } = req.body;
+
+    try {
+        // Prepare data for saving quiz result
+        const quizResultData = {
+            quizId,
+            userId,
+            answers,
+        };
+
+        // Save or update quiz result
+        const savedResult = await quizDao.saveOrUpdateQuizResult(quizResultData);
+        res.status(200).json({ message: "Quiz result saved successfully", savedResult });
+    } catch (error) {
+        console.error("Error saving quiz result:", error);
+        res.status(500).json({ message: "Failed to save quiz result", error: error.message });
+    }
+});
+
+// Fetch quiz result by quiz ID and user ID
+app.get("/api/quizResults/:quizId/:userId", async (req, res) => {
+    const { quizId, userId } = req.params;
+
+    try {
+        const result = await quizDao.fetchQuizResultByQuizAndUser(quizId, userId);
+        if (!result) {
+            return res.status(404).json({ message: "No quiz result found for the given user and quiz" });
+        }
+
+        res.status(200).json({ result });
+    } catch (error) {
+        console.error("Error fetching quiz result:", error);
+        res.status(500).json({ message: "Internal server error" });
+    }
+});
 }

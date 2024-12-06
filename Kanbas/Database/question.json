@@ -5,7 +5,7 @@
         "text": "An HTML label element can be associated with an HTML input element by setting their id attributes to the same value. The resulting effect is that when you click on the label text, the input element receives focus as if you had clicked on the input element itself.",
         "type": "True or False",
         "options": ["True", "False"],
-        "correctAnswer": "True",
+        "correctAnswer": ["True"],
         "points": 1
     },
     {
@@ -18,15 +18,15 @@
             "To specify alternate text for an image",
             "To specify the width of an image"
         ],
-        "correctAnswer": "To specify alternate text for an image",
+        "correctAnswer": ["To specify alternate text for an image"],
         "points": 2
     },
     {
-        "_id": "QS3",
-        "quizId": "A101",
+        "questionId": "QS17",
+        "quizId": "A201",
         "text": "Fill in the blank: HTML is used to create _______.",
         "type": "Fill in the Blank",
-        "correctAnswer": "web pages",
+        "correctAnswer": ["web pages"],
         "points": 2
     },
     {
@@ -35,7 +35,7 @@
         "text": "Which HTML tag is used to define an unordered list?",
         "type": "Multiple Choice",
         "options": ["<ul>", "<ol>", "<li>", "<list>"],
-        "correctAnswer": "<ul>",
+        "correctAnswer": ["<ul>"],
         "points": 2
     },
     {
@@ -48,7 +48,7 @@
             "Home Tool Markup Language",
             "Hyperlinks and Text Markup Language"
         ],
-        "correctAnswer": "Hyper Text Markup Language",
+        "correctAnswer": ["Hyper Text Markup Language"],
         "points": 2
     },
     {
@@ -57,7 +57,7 @@
         "text": "Which CSS property is used to change the background color?",
         "type": "Multiple Choice",
         "options": ["color", "background-color", "bg-color"],
-        "correctAnswer": "background-color",
+        "correctAnswer": ["background-color"],
         "points": 3
     },
     {
@@ -70,7 +70,7 @@
             "/* This is a comment */",
             "<!-- This is a comment -->"
         ],
-        "correctAnswer": "/* This is a comment */",
+        "correctAnswer": ["/* This is a comment */"],
         "points": 2
     },
     {
@@ -79,7 +79,7 @@
         "text": "Which CSS property controls the text size?",
         "type": "Multiple Choice",
         "options": ["font-style", "text-size", "font-size", "text-style"],
-        "correctAnswer": "font-size",
+        "correctAnswer": ["font-size"],
         "points": 4
     },
     {
@@ -88,7 +88,7 @@
         "text": "Which CSS selector is used to select an element with id 'header'?",
         "type": "Multiple Choice",
         "options": ["#header", ".header", "header", "*header"],
-        "correctAnswer": "#header",
+        "correctAnswer": ["#header"],
         "points": 2
     },
     {
@@ -101,7 +101,7 @@
             "Changes the opacity of an element",
             "Sets the z-index of an element"
         ],
-        "correctAnswer": "Positions an element to the left or right of its container",
+        "correctAnswer": ["Positions an element to the left or right of its container"],
         "points": 3
     },
     {
@@ -110,7 +110,7 @@
         "text": "What keyword is used to declare a variable in JavaScript?",
         "type": "Multiple Choice",
         "options": ["var", "let", "const", "All of the above"],
-        "correctAnswer": "All of the above",
+        "correctAnswer": ["All of the above"],
         "points": 3
     },
     {
@@ -119,7 +119,7 @@
         "text": "What is the output of: console.log(typeof null)?",
         "type": "Multiple Choice",
         "options": ["null", "object", "undefined", "number"],
-        "correctAnswer": "object",
+        "correctAnswer": ["object"],
         "points": 2
     },
     {
@@ -128,7 +128,7 @@
         "text": "Which method is used to add an element to the end of an array in JavaScript?",
         "type": "Multiple Choice",
         "options": ["push()", "pop()", "shift()", "unshift()"],
-        "correctAnswer": "push()",
+        "correctAnswer": ["push()"],
         "points": 2
     },
     {
@@ -137,7 +137,7 @@
         "text": "Which symbol is used for comments in JavaScript?",
         "type": "Multiple Choice",
         "options": ["//", "/* */", "<!-- -->", "Both // and /* */"],
-        "correctAnswer": "Both // and /* */",
+        "correctAnswer": ["Both // and /* */"],
         "points": 2
     },
     {
@@ -146,7 +146,7 @@
         "text": "Which of the following is not a JavaScript data type?",
         "type": "Multiple Choice",
         "options": ["Number", "String", "Boolean", "Character"],
-        "correctAnswer": "Character",
+        "correctAnswer": ["Character"],
         "points": 2
     },
     {
@@ -159,16 +159,16 @@
             "The friction of air molecules against the surface of a moving object",
             "The force that propels an aircraft forward"
         ],
-        "correctAnswer": "The friction of air molecules against the surface of a moving object",
+        "correctAnswer": ["The friction of air molecules against the surface of a moving object"],
         "points": 3
     },
     {
-        "_id": "QS17",
-        "quizId": "A201",
+        "questionId": "QS3",
+        "quizId": "A101",
         "text": "True or False: Increasing the speed of an aircraft will always decrease the aerodynamic drag.",
         "type": "True or False",
         "options": ["True", "False"],
-        "correctAnswer": "False",
+        "correctAnswer": ["False"],
         "points": 2
     },
     {
@@ -176,7 +176,7 @@
         "quizId": "A201",
         "text": "Fill in the blank: The _______ is the point where the airflow separates from the surface of an object.",
         "type": "Fill in the Blank",
-        "correctAnswer": "separation point",
+        "correctAnswer": ["separation point"],
         "points": 2
     },
     {
@@ -189,7 +189,7 @@
             "Critical Flow Design",
             "Cyclic Flow Diagram"
         ],
-        "correctAnswer": "Computational Fluid Dynamics",
+        "correctAnswer": ["Computational Fluid Dynamics"],
         "points": 3
     },
     {
@@ -198,7 +198,7 @@
         "text": "True or False: Laminar flow is characterized by smooth and constant fluid motion.",
         "type": "True or False",
         "options": ["True", "False"],
-        "correctAnswer": "True",
+        "correctAnswer": ["True"],
         "points": 2
     },
     {
@@ -212,7 +212,7 @@
             "Ohm's Law",
             "Kepler's Law"
         ],
-        "correctAnswer": "Fourier's Law",
+        "correctAnswer": ["Fourier's Law"],
         "points": 3
     },
     {
@@ -220,7 +220,7 @@
         "quizId": "A203",
         "text": "Fill in the blank: Heat always flows from _______ temperature to _______ temperature.",
         "type": "Fill in the Blank",
-        "correctAnswer": "higher, lower",
+        "correctAnswer": ["higher", "lower"],
         "points": 2
     },
     {
@@ -233,7 +233,7 @@
             "To ensure structures can withstand loads and forces safely",
             "To create aesthetically pleasing designs"
         ],
-        "correctAnswer": "To ensure structures can withstand loads and forces safely",
+        "correctAnswer": ["To ensure structures can withstand loads and forces safely"],
         "points": 3
     },
     {
@@ -246,7 +246,7 @@
             "The square of the orbital period is proportional to the cube of the semi-major axis",
             "An object in motion stays in motion unless acted upon by an external force"
         ],
-        "correctAnswer": "Planets move in elliptical orbits with the Sun at one focus",
+        "correctAnswer": ["Planets move in elliptical orbits with the Sun at one focus"],
         "points": 3
     },
     {
@@ -255,7 +255,7 @@
         "text": "Systems engineering is an interdisciplinary field focusing on how to design and manage complex systems over their life cycles.",
         "type": "True or False",
         "options": ["True", "False"],
-        "correctAnswer": "True",
+        "correctAnswer": ["True"],
         "points": 2
     }
 ]

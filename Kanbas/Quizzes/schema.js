@@ -32,20 +32,81 @@ export const quizSchema = new mongoose.Schema({
 );
 
 export const questionSchema = new mongoose.Schema({
-    questionId: {
-        type: String, required: true, unique: true, default: function () {
-            return 'QS' + Math.floor(Math.random() * 1000);
-        }
+    // questionId: {
+    //     type: String, // In local db is using string
+    //     required: true, 
+    //     unique: true
+    // },
+    _id: {
+        type: String,
+        required: true
     },
     quizId: String,
     title: String, 
     text: String,
     type:  {
         type: String,
-        enum: ['Multiple Choice', 'True False', 'Fill in the blanks'],
+        enum: ['Multiple Choice', 'True or False', 'Fill in the blanks'],
     },
     options: [String],
-    correctAnswer: String,
+    correctAnswer: [String],
+    blanks: [],
     points: Number,
 },
     { collection: "questions" });
+// export const questionSchema = new mongoose.Schema({
+//     questionId: { type: String, required: true, unique: true },
+//     quizId: String,
+//     title: String,
+//     text: String,
+//     type: {
+//         type: String,
+//         enum: ['Multiple Choice', 'True False', 'Fill in the blanks'],
+//     },
+//     options: [String],
+//     correctAnswer: [String],
+//     blanks: [],
+//     points: Number,
+// },
+// { collection: "questions" });
+
+
+
+// export const quizResultSchema = new mongoose.Schema({
+//     quizId: String, 
+//     userId: String, 
+//     answers: [
+//         {
+//             questionId: String,
+//             answer: String, 
+//         }
+//     ],
+//     score: Number,
+//     timestamp: {
+//         type: Date,
+//         default: Date.now
+//     }
+// },
+// {collection: "quizResult"});
+export const quizResultSchema = new mongoose.Schema({
+    quizId: {
+        type: String,
+        required: true
+    }, 
+    userId: String,
+    answers: [
+        {
+            questionId: String,  
+            answer: String, 
+        }
+    ],
+    score: {
+        type: Number,
+        required: true
+    },
+    timestamp: {
+        type: Date,
+        default: Date.now
+    }
+},
+{ collection: "quizResult" });

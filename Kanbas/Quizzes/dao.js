@@ -1,4 +1,5 @@
-import { QuizModel, QuestionModel } from "./model.js";
+import { QuizModel, QuestionModel, QuizResult} from "./model.js";
+
 
 export async function fetchQuizzes(cid) {
     const quizzes = await QuizModel.find({ course: cid });
@@ -31,20 +32,6 @@ export async function deleteQuiz(qid) {
     await model.deleteOne({_id: qid});
 }
 
-// export const updateQuestion = (questionId, updatedQuestion) => questionModel.updateOne({ questionId: questionId }, { $set: updatedQuestion });
-// export const createQuestion = (question) => {
-//     return questionModel.create(question);
-// } 
-// export async function deleteQuestion(_id) {
-//     await QuestionModel.deleteOne({_id});
-// }
-// export async function updateQuestion(_id, updatedQuestion) {
-//     QuestionModel.updateOne({ _id: _id }, { $set: updatedQuestion });
-// }
-// export async function createQuestion(question) {
-
-//     return QuestionModel.create(question);
-// }
 export async function updateQuestion(questionId, updatedQuestion) {
     try {
         const updatedQ = await QuestionModel.findByIdAndUpdate(questionId, updatedQuestion, { new: true });
@@ -72,3 +59,69 @@ export async function deleteQuestion(questionId) {
         throw error;
     }
 }
+
+
+
+export const saveOrUpdateQuizResult = async (quizResultData) => {
+    const { quizId, userId, answers } = quizResultData;
+
+    try {
+        let totalScore = 0;
+
+        for (let answer of answers) {
+            console.log("Processing questionId:", answer.questionId);
+            
+            // Fetch the corresponding question using `questionId` directly, not `_id`
+            const question = await QuestionModel.findOne({ questionId: answer.questionId });
+            if (!question) {
+                console.error(`Question with ID ${answer.questionId} not found`);
+                continue;
+            }
+
+            // Compare user's answer with the correct answer
+            console.log("User's answer:", answer.answer);
+            console.log("Correct answer:", question.correctAnswer);
+            if (Array.isArray(answer.answer) && Array.isArray(question.correctAnswer)) {
+                if (JSON.stringify(answer.answer) === JSON.stringify(question.correctAnswer)) {
+                    totalScore += question.points;
+                }
+            } else if (answer.answer === question.correctAnswer[0]) {
+                totalScore += question.points;
+            } else {
+                console.log("Answers do not match.");
+            }
+        }
+
+        console.log("Final calculated score:", totalScore);
+
+        // If everything is correct, save the result
+        return await QuizResult.findOneAndUpdate(
+            { quizId, userId },
+            { answers, score: totalScore, timestamp: new Date() },
+            { new: true, upsert: true }
+        );
+    } catch (error) {
+        console.error("Error saving or updating quiz result:", error);
+        throw error;
+    } 
+};
+
+export const fetchQuizResultByQuizAndUser = async (quizId, userId) => {
+    try {
+        // Fetch the quiz result using both `quizId` and `userId`
+        const quizResult = await QuizResult.findOne({ quizId, userId });
+
+        if (!quizResult) {
+            console.error(`No quiz result found for quizId: ${quizId} and userId: ${userId}`);
+            return null; // Return null if no quiz result is found
+        }
+
+        // Log the fetched result for debugging purposes
+        console.log("Fetched Quiz Result:", JSON.stringify(quizResult, null, 2));
+
+        return quizResult;
+    } catch (error) {
+        console.error("Error fetching quiz result by quiz and user ID:", error);
+        throw error;
+    }
+};
