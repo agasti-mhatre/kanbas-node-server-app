@@ -29,7 +29,7 @@ export async function updateQuiz(quiz) {
 
 export async function deleteQuiz(qid) {
 
-    await model.deleteOne({_id: qid});
+    await QuizModel.deleteOne({_id: qid});
 }
 
 export async function updateQuestion(questionId, updatedQuestion) {
