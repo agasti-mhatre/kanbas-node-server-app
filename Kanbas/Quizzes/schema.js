@@ -32,17 +32,9 @@ export const quizSchema = new mongoose.Schema({
 );
 
 export const questionSchema = new mongoose.Schema({
-    // questionId: {
-    //     type: String, // In local db is using string
-    //     required: true, 
-    //     unique: true
-    // },
-    _id: {
-        type: String,
-        required: true
-    },
+   
+    questionId: String,
     quizId: String,
-    title: String, 
     text: String,
     type:  {
         type: String,
@@ -50,44 +42,12 @@ export const questionSchema = new mongoose.Schema({
     },
     options: [String],
     correctAnswer: [String],
-    blanks: [],
+    blankAnswers: [String],
     points: Number,
+    editMode: Boolean,
 },
     { collection: "questions" });
-// export const questionSchema = new mongoose.Schema({
-//     questionId: { type: String, required: true, unique: true },
-//     quizId: String,
-//     title: String,
-//     text: String,
-//     type: {
-//         type: String,
-//         enum: ['Multiple Choice', 'True False', 'Fill in the blanks'],
-//     },
-//     options: [String],
-//     correctAnswer: [String],
-//     blanks: [],
-//     points: Number,
-// },
-// { collection: "questions" });
 
-
-
-// export const quizResultSchema = new mongoose.Schema({
-//     quizId: String, 
-//     userId: String, 
-//     answers: [
-//         {
-//             questionId: String,
-//             answer: String, 
-//         }
-//     ],
-//     score: Number,
-//     timestamp: {
-//         type: Date,
-//         default: Date.now
-//     }
-// },
-// {collection: "quizResult"});
 export const quizResultSchema = new mongoose.Schema({
     quizId: {
         type: String,

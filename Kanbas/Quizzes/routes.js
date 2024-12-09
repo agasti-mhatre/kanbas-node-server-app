@@ -38,7 +38,7 @@ export default function QuizzesRoutes(app) {
         try {
             const { quizId } = req.params;
             const questions = await quizDao.fetchQuestions(quizId);
-            console.log('look at the questions: ', questions);
+            // console.log('look at the questions: ', questions);
 
             if (!questions) {
                 return res.status(404).json({
@@ -69,7 +69,7 @@ export default function QuizzesRoutes(app) {
             newQuestion.questionId = 'QS' + Math.floor(Math.random() * 1000);
         }
         const question = await quizDao.createQuestion(newQuestion);
-        res.send(newQuestion);
+        res.send(question);
     });
     
 

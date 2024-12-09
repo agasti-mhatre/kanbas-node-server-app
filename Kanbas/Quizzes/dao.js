@@ -34,13 +34,18 @@ export async function deleteQuiz(qid) {
 
 export async function updateQuestion(questionId, updatedQuestion) {
     try {
-        const updatedQ = await QuestionModel.findByIdAndUpdate(questionId, updatedQuestion, { new: true });
+        const updatedQ = await QuestionModel.findOneAndUpdate(
+            { questionId }, // Use questionId explicitly
+            updatedQuestion,
+            { new: true } // Return the updated document
+        );
         return updatedQ;
     } catch (error) {
         console.error(`Error updating question with ID ${questionId}:`, error);
         throw error;
     }
 }
+
 export async function createQuestion(question) {
     try {
         const createdQuestion = await QuestionModel.create(question);
@@ -52,7 +57,7 @@ export async function createQuestion(question) {
 }
 export async function deleteQuestion(questionId) {
     try {
-        const result = await QuestionModel.findByIdAndDelete(questionId);
+        const result = await QuestionModel.findOneAndDelete({ questionId }); 
         return result;
     } catch (error) {
         console.error(`Error deleting question with ID ${questionId}:`, error);
